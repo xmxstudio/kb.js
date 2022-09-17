@@ -1,6 +1,7 @@
 // let kb = new keyboardGenerator('#keyboard', 'qwerty,asdf,zxcvbn,qwerty,qwerty');
+let kb = new keyboardGenerator('#keyboard');
 let kb2 = new keyboardGenerator('#keyboard2','+,-,[enter][space]');
-
+kb.enableRGB()
 
 let hm = document.querySelector("#hangman");
 let man = ['0','0<br/>|','0<br/>|<br/>/','0<br/>|<br/>/\\',' 0<br/>-|<br/>/\\',' 0<br/>-|-<br/>/\\'];
@@ -14,8 +15,7 @@ fetch('https://random-word-api.herokuapp.com/word').then((response) => response.
 
 
 
-let kb = new keyboardGenerator('#keyboard');
-kb.enableRGB()
+
 kb.on('keyDown',k=>{  
   if(hm.gameover == true) return;
   if(kb.keys[k].disabled) return;
