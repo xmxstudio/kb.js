@@ -2,7 +2,7 @@ class keyboardGenerator{
 
   constructor(rootElement,keysString = 'qwertyuiop,|asdfghjkl, zxcvbnm'){
     this.rootElement = document.querySelector(rootElement);
-    // ["[space]","[enter]","[capslock]","[escape]"].forEach(rep=>keysString=keysString.replace(rep, '*')) //not implemented yet. fuck u later me.
+    ["[space]","[enter]","[capslock]","[escape]"].forEach(rep=>keysString=keysString.replace(rep, '*')) //not implemented yet. fuck u later me.
     this.keysString = keysString;
     this.keys = [];
     this.maxRowCount = this.keysString.split(',').map(s=>s.length).sort((a,b)=>b-a)[0];
